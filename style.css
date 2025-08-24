@@ -1,0 +1,151 @@
+/* Reset Básico e Cores */
+:root {
+    --background: #0D0D0D;
+    --text: #F2F2F2;
+    --highlight: #CEFF1A; /* Amarelo-esverdeado */
+    --blue: #0000FF;
+    --pink: #FF007F;
+    --border-color: rgba(242, 242, 242, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Formas Decorativas do Fundo */
+.shape {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.7;
+    filter: blur(50px);
+}
+
+.shape-blue {
+    width: 50vw;
+    height: 50vw;
+    background-color: var(--blue);
+    left: -20vw;
+    top: 10vh;
+    transform: rotate(45deg);
+}
+
+.shape-pink {
+    width: 50vw;
+    height: 50vw;
+    background-color: var(--pink);
+    right: -25vw;
+    bottom: -10vh;
+    transform: rotate(60deg);
+}
+
+/* Container Principal */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Cabeçalho e Navegação */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 4rem;
+}
+
+.logo a {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+}
+
+nav a {
+    color: var(--text);
+    text-decoration: none;
+    border: 2px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: var(--highlight);
+    color: var(--background);
+    border-color: var(--highlight);
+}
+
+/* Conteúdo Principal */
+main h1 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+main h1 .highlight {
+    background-color: var(--blue);
+    color: var(--text);
+    padding: 0.2rem 0.8rem;
+}
+
+/* Grade de Links */
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.link-card {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--border-color);
+    text-decoration: none;
+    color: var(--text);
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.link-card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--highlight);
+}
+
+.link-card .placeholder {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.link-card .placeholder svg {
+    width: 60px;
+    height: 60px;
+    color: var(--text);
+}
+
+
+.link-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
